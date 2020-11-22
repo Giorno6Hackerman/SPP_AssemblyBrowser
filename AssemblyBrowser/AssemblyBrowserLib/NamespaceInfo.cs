@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace AssemblyBrowserLib
 {
-    class NamespaceInfo
+    public class NamespaceInfo
     {
         public string Name { get; }
         private List<Type> _types;

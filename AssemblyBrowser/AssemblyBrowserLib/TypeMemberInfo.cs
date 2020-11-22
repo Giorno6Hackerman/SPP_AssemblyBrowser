@@ -2,7 +2,7 @@
 
 namespace AssemblyBrowserLib
 {
-    class TypeMemberInfo
+    public class TypeMemberInfo
     {
         private MemberInfo _memberInfo { get; }
 

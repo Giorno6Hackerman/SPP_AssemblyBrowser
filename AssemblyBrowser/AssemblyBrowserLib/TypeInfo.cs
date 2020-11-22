@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace AssemblyBrowserLib
 {
-    class TypeInfo
+    public class TypeInfo
     {
         public string Name { get; }
         private Type _type;

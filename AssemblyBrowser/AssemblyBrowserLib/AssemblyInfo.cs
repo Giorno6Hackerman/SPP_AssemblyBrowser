@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace AssemblyBrowserLib
 {
-    class AssemblyInfo
+    public class AssemblyInfo
     {
         public string Name { get; }
         private string _path;
