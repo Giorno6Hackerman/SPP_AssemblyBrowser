@@ -1,8 +1,9 @@
-﻿using System.Reflection;
+﻿using Prism.Mvvm;
+using System.Reflection;
 
 namespace AssemblyBrowserLib
 {
-    public class TypeMemberInfo
+    public class TypeMemberInfo //: BindableBase
     {
         private MemberInfo _memberInfo { get; }
 

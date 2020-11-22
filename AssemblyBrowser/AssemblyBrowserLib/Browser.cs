@@ -1,9 +1,10 @@
-﻿using System.ComponentModel;
+﻿using Prism.Mvvm;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace AssemblyBrowserLib
 {
-    public class Browser : INotifyPropertyChanged
+    public class Browser : /*BindableBase, */INotifyPropertyChanged
     {
         public AssemblyInfo Asm 
         { 

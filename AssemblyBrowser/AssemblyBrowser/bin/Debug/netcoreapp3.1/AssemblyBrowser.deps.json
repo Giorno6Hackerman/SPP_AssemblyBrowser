@@ -24,6 +24,9 @@
         }
       },
       "AssemblyBrowserLib/1.0.0": {
+        "dependencies": {
+          "Prism.Core": "8.0.0.1909"
+        },
         "runtime": {
           "AssemblyBrowserLib.dll": {}
         }

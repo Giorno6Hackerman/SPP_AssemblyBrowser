@@ -1,6 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Collections.Generic;
-using System.Text;
 using AssemblyBrowserLib;
 using System.Runtime.CompilerServices;
 using Prism.Commands;
@@ -22,7 +20,6 @@ namespace AssemblyBrowser
             set
             {
                 _path = value;
-                _browser = new Browser(_path);
                 OnPropertyChanged("Path");
             }
         }
@@ -32,6 +29,7 @@ namespace AssemblyBrowser
             GetInfoCommand = new DelegateCommand(() =>
             {
                 Path = GetFilePath();
+                _browser = new Browser(_path);
                 _browser.BrowseAssembly();
             });
         }
@@ -47,7 +45,7 @@ namespace AssemblyBrowser
             return null;
         }
 
-        public AssemblyInfo AsmInfo => _browser.Asm;
+        public AssemblyInfo AsmInfo => _browser?.Asm;
 
         public DelegateCommand GetInfoCommand { get; }
         public event PropertyChangedEventHandler PropertyChanged;

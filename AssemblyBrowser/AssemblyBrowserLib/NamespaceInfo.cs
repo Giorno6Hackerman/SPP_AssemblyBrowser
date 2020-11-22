@@ -1,14 +1,16 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace AssemblyBrowserLib
 {
-    public class NamespaceInfo
+    public class NamespaceInfo //: BindableBase
     {
         public string Name { get; }
         private List<Type> _types;
-        public IReadOnlyList<TypeInfo> Types { get { return GetInfo(); } }
+        public ObservableCollection<TypeInfo> Types { get { return GetInfo(); } }
 
         public NamespaceInfo(string name, List<Type> types)
         {
@@ -16,11 +18,11 @@ namespace AssemblyBrowserLib
             _types = new List<Type>(types);
         }
 
-        private IReadOnlyList<TypeInfo> GetInfo()
+        private ObservableCollection<TypeInfo> GetInfo()
         {
             var result = from type in _types
                          select new TypeInfo(type);
-            return new List<TypeInfo>(result);
+            return new ObservableCollection<TypeInfo>(result);
         }
     }
 }

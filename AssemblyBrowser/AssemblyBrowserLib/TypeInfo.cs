@@ -1,16 +1,18 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 
 namespace AssemblyBrowserLib
 {
-    public class TypeInfo
+    public class TypeInfo //: BindableBase
     {
         public string Name { get; }
         private Type _type;
         private List<TypeMemberInfo> _members;
-        public IReadOnlyList<TypeMemberInfo> Members { get { return GetInfo(); } }
+        public ObservableCollection<TypeMemberInfo> Members { get { return GetInfo(); } }
 
         public TypeInfo(Type type)
         {
@@ -18,7 +20,7 @@ namespace AssemblyBrowserLib
             _members = new List<TypeMemberInfo>();
         }
 
-        private IReadOnlyList<TypeMemberInfo> GetInfo()
+        private ObservableCollection<TypeMemberInfo> GetInfo()
         {
             
             var result = from mem in _type.GetMembers()
@@ -26,7 +28,7 @@ namespace AssemblyBrowserLib
                                mem.MemberType == MemberTypes.Field ||
                                mem.MemberType == MemberTypes.Property
                          select new TypeMemberInfo(mem);
-            return new List<TypeMemberInfo>(result);
+            return new ObservableCollection<TypeMemberInfo>(result);
         }
     }
 }
