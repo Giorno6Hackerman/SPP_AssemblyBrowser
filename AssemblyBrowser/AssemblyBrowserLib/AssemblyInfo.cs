@@ -43,7 +43,7 @@ namespace AssemblyBrowserLib
             var namespaces = from type in _asm.GetTypes()
                              group type by type.Namespace;
             var result = from namespc in namespaces
-                         select new NamespaceInfo(namespc.Key, new List<Type>(namespc.Where(type => type.Namespace == namespc.Key)));
+                         select new NamespaceInfo(namespc.Key, new List<Type>(namespc.Where(type => type.Namespace == namespc.Key && type.Namespace != null)));
 
             return new ObservableCollection<NamespaceInfo>(result);
         }

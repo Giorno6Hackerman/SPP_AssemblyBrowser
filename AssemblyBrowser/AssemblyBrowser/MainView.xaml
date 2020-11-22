@@ -24,13 +24,14 @@
             </Button>
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <TextBox Text="{Binding AsmInfo.Name, UpdateSourceTrigger=PropertyChanged}"/>
-            <TreeView>
-                <TreeViewItem Header="C-языки">
-                    <TreeViewItem Header="C#" />
-                    <TreeViewItem Header="C/C++" />
-                    <TreeViewItem Header="Java" />
-                </TreeViewItem>
+            <TextBlock Text="{Binding AsmInfo.Name, UpdateSourceTrigger=PropertyChanged}"/>
+            <TreeView ItemsSource="{Binding AsmInfo.Namespaces}" Visibility="Visible">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Path=Types}">
+                        <TextBlock Text="{Binding Name}"/>
+                        
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
             </TreeView>
         </StackPanel>
         <!--<StackPanel Grid.Row="1">
@@ -41,6 +42,13 @@
                         <TextBlock Text="{Binding Name}"/>
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
+            </TreeView>
+            <TreeView>
+                <TreeViewItem Header="C-языки">
+                    <TreeViewItem Header="C#" />
+                    <TreeViewItem Header="C/C++" />
+                    <TreeViewItem Header="Java" />
+                </TreeViewItem>
             </TreeView>
         </StackPanel> -->
     </Grid>
