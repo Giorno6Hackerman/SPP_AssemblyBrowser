@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace AssemblyBrowserLib
 {
-    public class Browser : BindableBase//, INotifyPropertyChanged
+    public class Browser : /*BindableBase*/ INotifyPropertyChanged
     {
         public AssemblyInfo Asm 
         { 
@@ -16,7 +16,7 @@ namespace AssemblyBrowserLib
             set
             {
                 _asm = value;
-                //OnPropertyChanged("Asm");
+                OnPropertyChanged("Asm");
             }
         }
 
@@ -32,12 +32,12 @@ namespace AssemblyBrowserLib
         {
             Asm = new AssemblyInfo(_path);
         }
-        /*
+        
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }*/
+        }
     }
 }

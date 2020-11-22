@@ -7,9 +7,10 @@ using Prism.Mvvm;
 
 namespace AssemblyBrowser
 {
-    public class MainViewVM : BindableBase//INotifyPropertyChanged
+    public class MainViewVM : /*BindableBase*/INotifyPropertyChanged
     {
-        private Browser _browser;
+        //private Browser _browser;
+        private AssemblyInfo _asm;
         private string _path;
 
         public string Path
@@ -21,7 +22,7 @@ namespace AssemblyBrowser
             set
             {
                 _path = value;
-                //OnPropertyChanged("Path");
+                OnPropertyChanged("Path");
             }
         }
 
@@ -30,8 +31,8 @@ namespace AssemblyBrowser
             GetInfoCommand = new DelegateCommand(() =>
             {
                 Path = GetFilePath();
-                _browser = new Browser(_path);
-                _browser.BrowseAssembly();
+                AsmInfo = new AssemblyInfo(_path);
+                //_browser.BrowseAssembly();
             });
         }
 
@@ -46,14 +47,26 @@ namespace AssemblyBrowser
             return null;
         }
 
-        public AssemblyInfo AsmInfo => _browser?.Asm;
+        public AssemblyInfo AsmInfo
+        {
+            get
+            {
+                return _asm;
+            }
+
+            set
+            {
+                _asm = value;
+                OnPropertyChanged("AsmInfo");
+            }
+        }
 
         public DelegateCommand GetInfoCommand { get; }
-        /*public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }*/
+        }
     }
 }

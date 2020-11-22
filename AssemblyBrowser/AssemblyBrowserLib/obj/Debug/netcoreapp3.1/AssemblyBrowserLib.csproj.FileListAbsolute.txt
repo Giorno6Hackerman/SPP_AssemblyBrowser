@@ -6,3 +6,4 @@ c:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowserLib\obj\Debug\netcoreapp3
 c:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowserLib\obj\Debug\netcoreapp3.1\AssemblyBrowserLib.csproj.CoreCompileInputs.cache
 c:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowserLib\obj\Debug\netcoreapp3.1\AssemblyBrowserLib.dll
 c:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowserLib\obj\Debug\netcoreapp3.1\AssemblyBrowserLib.pdb
+c:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowserLib\obj\Debug\netcoreapp3.1\AssemblyBrowserLib.csprojAssemblyReference.cache
