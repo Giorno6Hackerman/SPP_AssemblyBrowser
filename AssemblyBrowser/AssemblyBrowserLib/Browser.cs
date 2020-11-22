@@ -20,6 +20,7 @@ namespace AssemblyBrowserLib
         }
 
         private AssemblyInfo _asm;
+        private string _path;
 
         public Browser(string path) 
         {

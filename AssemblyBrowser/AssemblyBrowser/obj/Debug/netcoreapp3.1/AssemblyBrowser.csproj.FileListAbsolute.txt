@@ -5,11 +5,9 @@ C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\bin\Debug\netcoreapp3.1\
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\bin\Debug\netcoreapp3.1\AssemblyBrowser.dll
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\bin\Debug\netcoreapp3.1\AssemblyBrowser.pdb
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\AssemblyBrowser.csprojAssemblyReference.cache
-C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\App.g.cs
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\AssemblyBrowser_MarkupCompile.cache
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\AssemblyBrowser_MarkupCompile.lref
-C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\MainWindow.baml
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\AssemblyBrowser.g.resources
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\AssemblyBrowser.AssemblyInfoInputs.cache
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\AssemblyBrowser.AssemblyInfo.cs
@@ -17,3 +15,5 @@ C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\AssemblyBrowser.dll
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\AssemblyBrowser.pdb
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\AssemblyBrowser.genruntimeconfig.cache
+c:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\MainView.g.cs
+c:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\MainView.baml
