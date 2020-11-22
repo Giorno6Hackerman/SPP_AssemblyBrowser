@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\AssemblyBrowserLib.csproj": {}
+    "c:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\AssemblyBrowserLib.csproj": {}
   },
   "projects": {
-    "C:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\AssemblyBrowserLib.csproj": {
+    "c:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\AssemblyBrowserLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\AssemblyBrowserLib.csproj",
+        "projectUniqueName": "c:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\AssemblyBrowserLib.csproj",
         "projectName": "AssemblyBrowserLib",
-        "projectPath": "C:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\AssemblyBrowserLib.csproj",
+        "projectPath": "c:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\AssemblyBrowserLib.csproj",
         "packagesPath": "C:\\Users\\Masha\\.nuget\\packages\\",
-        "outputPath": "C:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\obj\\",
+        "outputPath": "c:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Masha\\AppData\\Roaming\\NuGet\\NuGet.Config",
