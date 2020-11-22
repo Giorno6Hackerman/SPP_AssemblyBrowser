@@ -3,10 +3,11 @@ using AssemblyBrowserLib;
 using System.Runtime.CompilerServices;
 using Prism.Commands;
 using Microsoft.Win32;
+using Prism.Mvvm;
 
 namespace AssemblyBrowser
 {
-    public class MainViewVM : INotifyPropertyChanged
+    public class MainViewVM : BindableBase//INotifyPropertyChanged
     {
         private Browser _browser;
         private string _path;
@@ -20,7 +21,7 @@ namespace AssemblyBrowser
             set
             {
                 _path = value;
-                OnPropertyChanged("Path");
+                //OnPropertyChanged("Path");
             }
         }
 
@@ -48,11 +49,11 @@ namespace AssemblyBrowser
         public AssemblyInfo AsmInfo => _browser?.Asm;
 
         public DelegateCommand GetInfoCommand { get; }
-        public event PropertyChangedEventHandler PropertyChanged;
+        /*public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+        }*/
     }
 }

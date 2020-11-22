@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace AssemblyBrowserLib
 {
-    public class NamespaceInfo //: BindableBase
+    public class NamespaceInfo : BindableBase
     {
         public string Name { get; }
         private List<Type> _types;

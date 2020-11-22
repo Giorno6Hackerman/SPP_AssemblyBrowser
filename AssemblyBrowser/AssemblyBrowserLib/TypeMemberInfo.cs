@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace AssemblyBrowserLib
 {
-    public class TypeMemberInfo //: BindableBase
+    public class TypeMemberInfo : BindableBase
     {
         private MemberInfo _memberInfo { get; }
 

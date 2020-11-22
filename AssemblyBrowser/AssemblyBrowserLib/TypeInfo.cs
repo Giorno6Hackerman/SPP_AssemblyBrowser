@@ -7,7 +7,7 @@ using System.Reflection;
 
 namespace AssemblyBrowserLib
 {
-    public class TypeInfo //: BindableBase
+    public class TypeInfo : BindableBase
     {
         public string Name { get; }
         private Type _type;

@@ -4,12 +4,27 @@ using System.Reflection;
 using System.Linq;
 using System.Collections.ObjectModel;
 using Prism.Mvvm;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace AssemblyBrowserLib
 {
-    public class AssemblyInfo //: BindableBase
+    public class AssemblyInfo : BindableBase //INotifyPropertyChanged
     {
-        public string Name { get; }
+        private string _name;
+        public string Name 
+        {
+            get
+            {
+                return _name;
+            }
+
+            set 
+            {
+                _name = value;
+                //OnPropertyChanged("Name");
+            }
+        }
         private string _path;
         private Assembly _asm;
         public ObservableCollection<NamespaceInfo> Namespaces { get { return GetInfo(); } }
@@ -17,12 +32,12 @@ namespace AssemblyBrowserLib
         public AssemblyInfo(string path)
         {
             _path = path;
-            Name = AssemblyName.GetAssemblyName(path).ToString();
         }
 
         private ObservableCollection<NamespaceInfo> GetInfo()
         {
             _asm = Assembly.LoadFrom(_path);
+            Name = AssemblyName.GetAssemblyName(_path).ToString();
             var namespaces = from type in _asm.GetTypes()
                              group type by type.Namespace;
             var result = from namespc in namespaces
@@ -30,5 +45,12 @@ namespace AssemblyBrowserLib
 
             return new ObservableCollection<NamespaceInfo>(result);
         }
+        /*
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string prop = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+        }*/
     }
 }
