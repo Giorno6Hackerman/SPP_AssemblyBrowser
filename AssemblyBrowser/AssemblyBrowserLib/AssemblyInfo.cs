@@ -33,13 +33,13 @@ namespace AssemblyBrowserLib
         public AssemblyInfo(string path)
         {
             _path = path;
+            Name = AssemblyName.GetAssemblyName(_path).ToString();
             _namespaces = GetInfo();
         }
 
         private ObservableCollection<NamespaceInfo> GetInfo()
         {
             _asm = Assembly.LoadFrom(_path);
-            Name = AssemblyName.GetAssemblyName(_path).ToString();
             var namespaces = from type in _asm.GetTypes()
                              group type by type.Namespace;
             var result = from namespc in namespaces

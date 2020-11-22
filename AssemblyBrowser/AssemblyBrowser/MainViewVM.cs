@@ -9,7 +9,8 @@ namespace AssemblyBrowser
 {
     public class MainViewVM : /*BindableBase*/INotifyPropertyChanged
     {
-        private Browser _browser;
+        //private Browser _browser;
+        private AssemblyInfo _asm;
         private string _path;
 
         public string Path
@@ -30,8 +31,8 @@ namespace AssemblyBrowser
             GetInfoCommand = new DelegateCommand(() =>
             {
                 Path = GetFilePath();
-                _browser = new Browser(_path);
-                _browser.BrowseAssembly();
+                AsmInfo = new AssemblyInfo(_path);
+                //_browser.BrowseAssembly();
             });
         }
 
@@ -46,7 +47,19 @@ namespace AssemblyBrowser
             return null;
         }
 
-        public AssemblyInfo AsmInfo => _browser?.Asm;
+        public AssemblyInfo AsmInfo
+        {
+            get
+            {
+                return _asm;
+            }
+
+            set
+            {
+                _asm = value;
+                OnPropertyChanged("AsmInfo");
+            }
+        }
 
         public DelegateCommand GetInfoCommand { get; }
         public event PropertyChangedEventHandler PropertyChanged;

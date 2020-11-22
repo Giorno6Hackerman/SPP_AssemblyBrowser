@@ -17,14 +17,14 @@ namespace AssemblyBrowserLib
         public TypeInfo(Type type)
         {
             _type = type;
+            Name = _type.Name;
             _members = GetInfo();
         }
 
         private ObservableCollection<TypeMemberInfo> GetInfo()
         {
-            
             var result = from mem in _type.GetMembers()
-                         where mem.MemberType == MemberTypes.Method || 
+                         where (mem.MemberType == MemberTypes.Method && mem.DeclaringType != typeof(Object)) || 
                                mem.MemberType == MemberTypes.Field ||
                                mem.MemberType == MemberTypes.Property
                          select new TypeMemberInfo(mem);
