@@ -7,14 +7,43 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "AssemblyBrowser/1.0.0": {
+        "dependencies": {
+          "AssemblyBrowserLib": "1.0.0",
+          "Prism.Core": "8.0.0.1909"
+        },
         "runtime": {
           "AssemblyBrowser.dll": {}
+        }
+      },
+      "Prism.Core/8.0.0.1909": {
+        "runtime": {
+          "lib/netstandard2.0/Prism.dll": {
+            "assemblyVersion": "8.0.0.1909",
+            "fileVersion": "8.0.0.1909"
+          }
+        }
+      },
+      "AssemblyBrowserLib/1.0.0": {
+        "runtime": {
+          "AssemblyBrowserLib.dll": {}
         }
       }
     }
   },
   "libraries": {
     "AssemblyBrowser/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Prism.Core/8.0.0.1909": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ri+iSFvJiSKYdui7qtxi3uH9NImSZ8Jl/nOosxScSJseFwAc8Lz63JLXoqSAQglcX13DzZcAMzpKNuA9rCFiJg==",
+      "path": "prism.core/8.0.0.1909",
+      "hashPath": "prism.core.8.0.0.1909.nupkg.sha512"
+    },
+    "AssemblyBrowserLib/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

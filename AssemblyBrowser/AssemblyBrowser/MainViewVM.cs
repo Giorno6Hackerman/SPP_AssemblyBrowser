@@ -8,7 +8,7 @@ using Microsoft.Win32;
 
 namespace AssemblyBrowser
 {
-    class MainViewVM : INotifyPropertyChanged
+    public class MainViewVM : INotifyPropertyChanged
     {
         private Browser _browser;
         private string _path;
