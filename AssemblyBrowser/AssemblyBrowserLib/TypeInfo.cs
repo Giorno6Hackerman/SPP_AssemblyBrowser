@@ -12,7 +12,7 @@ namespace AssemblyBrowserLib
         public string Name { get; }
         private Type _type;
         private List<TypeMemberInfo> _members;
-        public IReadOnlyList<TypeMemberInfo> Info { get { return GetInfo(); } }
+        public IReadOnlyList<TypeMemberInfo> Members { get { return GetInfo(); } }
 
         public TypeInfo(Type type)
         {
