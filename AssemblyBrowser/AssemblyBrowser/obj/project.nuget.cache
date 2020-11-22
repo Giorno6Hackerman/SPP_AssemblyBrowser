@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "l8p5TYWRa2Qj/Sh4Btb0Mkc7NpJ1Jhd5S/AUU6hkVEhRXfv4TYRN7yfGGxt8qLl6lQO9rx9d7PcqVTPSzoNElA==",
+  "dgSpecHash": "vh1kYkv/lsNQnFikTYmI6n1F3XgRUafVrO7ndBBaqmahaPCorajG629mRBinCnQ6het9igKdDJCuA4ojEv30hA==",
   "success": true,
   "projectFilePath": "c:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowser\\AssemblyBrowser.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Masha\\.nuget\\packages\\prism.core\\8.0.0.1909\\prism.core.8.0.0.1909.nupkg.sha512"
+  ],
   "logs": []
 }

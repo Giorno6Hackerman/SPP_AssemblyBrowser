@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using AssemblyBrowserLib;
 using System.Runtime.CompilerServices;
+using Prism.Commands;
+using Microsoft.Win32;
 
 namespace AssemblyBrowser
 {
@@ -27,12 +29,27 @@ namespace AssemblyBrowser
 
         public MainViewVM()
         {
-            
+            GetInfoCommand = new DelegateCommand(() =>
+            {
+                Path = GetFilePath();
+                _browser.BrowseAssembly();
+            });
+        }
+
+        private string GetFilePath()
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Assembly| *.dll";
+            if (dialog.ShowDialog() == true)
+            {
+                return dialog.FileName;
+            }
+            return null;
         }
 
         public AssemblyInfo AsmInfo => _browser.Asm;
-        
 
+        public DelegateCommand GetInfoCommand { get; }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {

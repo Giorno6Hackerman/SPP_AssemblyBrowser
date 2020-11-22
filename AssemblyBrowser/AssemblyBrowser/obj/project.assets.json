@@ -1,11 +1,62 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Prism.Core/8.0.0.1909": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Prism.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Prism.dll": {}
+        }
+      },
+      "AssemblyBrowserLib/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/AssemblyBrowserLib.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AssemblyBrowserLib.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Prism.Core/8.0.0.1909": {
+      "sha512": "Ri+iSFvJiSKYdui7qtxi3uH9NImSZ8Jl/nOosxScSJseFwAc8Lz63JLXoqSAQglcX13DzZcAMzpKNuA9rCFiJg==",
+      "type": "package",
+      "path": "prism.core/8.0.0.1909",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/net45/Prism.dll",
+        "lib/net45/Prism.pdb",
+        "lib/net45/Prism.xml",
+        "lib/net47/Prism.dll",
+        "lib/net47/Prism.pdb",
+        "lib/net47/Prism.xml",
+        "lib/netstandard2.0/Prism.dll",
+        "lib/netstandard2.0/Prism.pdb",
+        "lib/netstandard2.0/Prism.xml",
+        "prism-logo.png",
+        "prism.core.8.0.0.1909.nupkg.sha512",
+        "prism.core.nuspec"
+      ]
+    },
+    "AssemblyBrowserLib/1.0.0": {
+      "type": "project",
+      "path": "../AssemblyBrowserLib/AssemblyBrowserLib.csproj",
+      "msbuildProject": "../AssemblyBrowserLib/AssemblyBrowserLib.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "AssemblyBrowserLib >= 1.0.0",
+      "Prism.Core >= 8.0.0.1909"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Masha\\.nuget\\packages\\": {}
@@ -13,11 +64,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowser\\AssemblyBrowser.csproj",
+      "projectUniqueName": "c:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowser\\AssemblyBrowser.csproj",
       "projectName": "AssemblyBrowser",
-      "projectPath": "C:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowser\\AssemblyBrowser.csproj",
+      "projectPath": "c:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowser\\AssemblyBrowser.csproj",
       "packagesPath": "C:\\Users\\Masha\\.nuget\\packages\\",
-      "outputPath": "C:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowser\\obj\\",
+      "outputPath": "c:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowser\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Masha\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +84,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "c:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\AssemblyBrowserLib.csproj": {
+              "projectPath": "c:\\5 sem\\SPP\\Labs\\Lab_3\\AssemblyBrowser\\AssemblyBrowserLib\\AssemblyBrowserLib.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -45,6 +100,12 @@
     "frameworks": {
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "Prism.Core": {
+            "target": "Package",
+            "version": "[8.0.0.1909, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

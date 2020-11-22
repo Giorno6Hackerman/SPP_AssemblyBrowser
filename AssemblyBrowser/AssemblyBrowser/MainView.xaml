@@ -6,11 +6,38 @@
         xmlns:local="clr-namespace:AssemblyBrowser"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type local:MainViewVM}">
+            <TreeView>
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Path=AsmInfo}">
+                        <TextBlock Text="{Binding Name}">
+                            
+                        </TextBlock>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </DataTemplate>
+    </Window.Resources>
+    <Window.DataContext>
+        <local:MainViewVM/>
+    </Window.DataContext>
     <Grid>
-
-        <Grid Background="GreenYellow">
-            <TextBlock Foreground="White"
-        Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type Grid}}, Path=Background}" />
-        </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*">
+            </RowDefinition>
+            <RowDefinition>
+            </RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Width="600" Height="40" Text="{Binding Path}">
+            </TextBox>
+            <Button Command="{Binding GetInfoCommand}">
+                Открыть
+            </Button>
+        </StackPanel>
+        <TreeView Grid.Row="1">
+            
+        </TreeView>
     </Grid>
 </Window>

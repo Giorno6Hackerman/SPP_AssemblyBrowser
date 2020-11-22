@@ -17,3 +17,4 @@ C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\
 C:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\AssemblyBrowser.genruntimeconfig.cache
 c:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\MainView.g.cs
 c:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\MainView.baml
+c:\5 sem\SPP\Labs\Lab_3\AssemblyBrowser\AssemblyBrowser\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs

@@ -27,6 +27,11 @@ namespace AssemblyBrowserLib
             _asm = new AssemblyInfo(path);
         }
 
+        public void BrowseAssembly()
+        {
+            Asm = _asm;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
