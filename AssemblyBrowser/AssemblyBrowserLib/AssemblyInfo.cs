@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 
 namespace AssemblyBrowserLib
 {
-    public class AssemblyInfo : BindableBase //INotifyPropertyChanged
+    public class AssemblyInfo : /*BindableBase*/INotifyPropertyChanged
     {
         private string _name;
         public string Name 
@@ -22,16 +22,18 @@ namespace AssemblyBrowserLib
             set 
             {
                 _name = value;
-                //OnPropertyChanged("Name");
+                OnPropertyChanged("Name");
             }
         }
         private string _path;
         private Assembly _asm;
-        public ObservableCollection<NamespaceInfo> Namespaces { get { return GetInfo(); } }
+        public ObservableCollection<NamespaceInfo> Namespaces { get { return _namespaces; } }
+        private ObservableCollection<NamespaceInfo> _namespaces;
 
         public AssemblyInfo(string path)
         {
             _path = path;
+            _namespaces = GetInfo();
         }
 
         private ObservableCollection<NamespaceInfo> GetInfo()
@@ -45,12 +47,12 @@ namespace AssemblyBrowserLib
 
             return new ObservableCollection<NamespaceInfo>(result);
         }
-        /*
+        
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }*/
+        }
     }
 }

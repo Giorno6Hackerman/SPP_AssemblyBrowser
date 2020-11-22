@@ -3,16 +3,18 @@ using System.Reflection;
 
 namespace AssemblyBrowserLib
 {
-    public class TypeMemberInfo : BindableBase
+    public class TypeMemberInfo //: BindableBase
     {
         private MemberInfo _memberInfo { get; }
 
         public TypeMemberInfo(MemberInfo memberInfo)
         {
             _memberInfo = memberInfo;
+            _info = GetInfo(memberInfo);
         }
 
-        public string Info { get { return GetInfo(_memberInfo); } }
+        public string Info { get { return _info; } }
+        private string _info;
 
         private string GetMemberInfo(MethodInfo info)
         {

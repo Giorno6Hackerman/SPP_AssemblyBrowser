@@ -11,13 +11,13 @@ namespace AssemblyBrowserLib
     {
         public string Name { get; }
         private Type _type;
-        private List<TypeMemberInfo> _members;
-        public ObservableCollection<TypeMemberInfo> Members { get { return GetInfo(); } }
+        private ObservableCollection<TypeMemberInfo> _members;
+        public ObservableCollection<TypeMemberInfo> Members { get { return _members; } }
 
         public TypeInfo(Type type)
         {
             _type = type;
-            _members = new List<TypeMemberInfo>();
+            _members = GetInfo();
         }
 
         private ObservableCollection<TypeMemberInfo> GetInfo()

@@ -6,16 +6,18 @@ using System.Linq;
 
 namespace AssemblyBrowserLib
 {
-    public class NamespaceInfo : BindableBase
+    public class NamespaceInfo //: BindableBase
     {
         public string Name { get; }
         private List<Type> _types;
-        public ObservableCollection<TypeInfo> Types { get { return GetInfo(); } }
+        public ObservableCollection<TypeInfo> Types { get { return _typesInfo; } }
+        private ObservableCollection<TypeInfo> _typesInfo;
 
         public NamespaceInfo(string name, List<Type> types)
         {
             Name = name;
             _types = new List<Type>(types);
+            _typesInfo = GetInfo();
         }
 
         private ObservableCollection<TypeInfo> GetInfo()
