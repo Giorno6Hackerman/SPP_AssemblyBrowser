@@ -23,42 +23,28 @@
                 Открыть
             </Button>
         </StackPanel>
-        <StackPanel Grid.Row="1">
-            <TextBlock Text="{Binding AsmInfo.Name, UpdateSourceTrigger=PropertyChanged}"/>
-            <TreeView ItemsSource="{Binding AsmInfo.Namespaces}" Visibility="Visible">
-                <TreeView.ItemTemplate>
-                    <HierarchicalDataTemplate ItemsSource="{Binding Path=Types}">
-                        <TextBlock Text="{Binding Name}"/>
-                        <HierarchicalDataTemplate.ItemTemplate>
-                            <HierarchicalDataTemplate ItemsSource="{Binding Path=Members}">
-                                <TextBlock Text="{Binding Name}"/>
-                                <HierarchicalDataTemplate.ItemTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding Info}"/>
-                                    </DataTemplate>
-                                </HierarchicalDataTemplate.ItemTemplate>
-                            </HierarchicalDataTemplate>
-                        </HierarchicalDataTemplate.ItemTemplate>
-                    </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
-            </TreeView>
-        </StackPanel>
-        <!--<StackPanel Grid.Row="1">
-            <TextBlock Text="{Binding AsmInfo.Name}" Visibility="Visible"/>
-            <TreeView ItemsSource="{Binding AsmInfo.Namespaces}" Visibility="Visible">
-                <TreeView.ItemTemplate>
-                    <HierarchicalDataTemplate ItemsSource="{Binding Path=Types}">
-                        <TextBlock Text="{Binding Name}"/>
-                    </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
-            </TreeView>
-            <TreeView>
-                <TreeViewItem Header="C-языки">
-                    <TreeViewItem Header="C#" />
-                    <TreeViewItem Header="C/C++" />
-                    <TreeViewItem Header="Java" />
-                </TreeViewItem>
-            </TreeView>
-        </StackPanel> -->
+        <DockPanel Grid.Row="1" LastChildFill="True">
+            <TextBlock DockPanel.Dock="Top" Text="{Binding AsmInfo.Name, UpdateSourceTrigger=PropertyChanged}"/>
+            <ScrollViewer>
+                <TreeView ItemsSource="{Binding AsmInfo.Namespaces}" Visibility="Visible">
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding Path=Types}">
+                            <TextBlock Text="{Binding Name}"/>
+                            <HierarchicalDataTemplate.ItemTemplate>
+                                <HierarchicalDataTemplate ItemsSource="{Binding Path=Members}">
+                                    <TextBlock Text="{Binding Name}"/>
+                                    <HierarchicalDataTemplate.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Info}"/>
+                                        </DataTemplate>
+                                    </HierarchicalDataTemplate.ItemTemplate>
+                                </HierarchicalDataTemplate>
+                            </HierarchicalDataTemplate.ItemTemplate>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+            
+            </ScrollViewer>
+        </DockPanel>
     </Grid>
 </Window>

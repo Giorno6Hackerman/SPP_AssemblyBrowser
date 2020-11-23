@@ -21,7 +21,7 @@ namespace AssemblyBrowser
             }
             set
             {
-                _path = value;
+                _path = value ?? _path;
                 OnPropertyChanged("Path");
             }
         }
@@ -31,7 +31,8 @@ namespace AssemblyBrowser
             GetInfoCommand = new DelegateCommand(() =>
             {
                 Path = GetFilePath();
-                AsmInfo = new AssemblyInfo(_path);
+                if(Path != null)
+                    AsmInfo = new AssemblyInfo(_path);
                 //_browser.BrowseAssembly();
             });
         }
