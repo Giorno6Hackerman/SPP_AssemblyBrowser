@@ -18,12 +18,13 @@ namespace AssemblyBrowserLib
 
         private string GetMemberInfo(MethodInfo info)
         {
-            string result = $"Method {info.Name} (";
+            string result = $"Method {info.Name}(";
             foreach (var param in info.GetParameters())
             {
                 result += $"{param.ParameterType} {param.Name}, ";
             }
-            result.Remove(result.Length - 2);
+            if(info.GetParameters().Length > 0)
+                result = result.Remove(result.Length - 2);
             return result + ")";
         }
 

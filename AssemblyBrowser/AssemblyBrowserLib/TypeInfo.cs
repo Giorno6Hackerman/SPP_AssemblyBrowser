@@ -23,8 +23,9 @@ namespace AssemblyBrowserLib
 
         private ObservableCollection<TypeMemberInfo> GetInfo()
         {
-            var result = from mem in _type.GetMembers()
-                         where (mem.MemberType == MemberTypes.Method && mem.DeclaringType != typeof(Object)) || 
+            var result = from mem in _type.GetMembers(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance)
+                         where (mem.MemberType == MemberTypes.Method && mem.DeclaringType.Equals(_type) && 
+                                (((int)(mem as MethodInfo).Attributes & 2048) == 0)) || 
                                mem.MemberType == MemberTypes.Field ||
                                mem.MemberType == MemberTypes.Property
                          select new TypeMemberInfo(mem);
