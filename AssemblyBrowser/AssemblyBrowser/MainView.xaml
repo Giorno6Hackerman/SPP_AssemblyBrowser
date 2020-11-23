@@ -8,26 +8,65 @@
         Title="MainView" Height="600" Width="800" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="Grid">
-            <Setter Property="TextBlock.FontFamily" Value="Comic Sans MS"/>
-            <Setter Property="TextBlock.FontWeight" Value="Bold"/>
+            <Setter Property="Block.FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="Block.FontWeight" Value="Bold"/>
+            <Setter Property="Block.Foreground" Value="White"/>
+            <Setter Property="Control.Background" Value="#2B2E4A"/>
         </Style>
         <Style TargetType="TreeView" >
-            <Setter Property="TextBlock.FontSize" Value="14"/>
+            <Setter Property="Block.FontSize" Value="14"/>
+            <Setter Property="Block.Foreground" Value="White"/>
             <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+            <Setter Property="Control.Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#53354A" Offset="1" />
+                            <GradientStop Color="#2B2E4A" Offset="0" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
         </Style>
         <Style TargetType="TreeViewItem">
             <Setter Property="TextBlock.Width" Value="750"/>
+            <Setter Property="Block.Foreground" Value="White"/>
         </Style>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="15 5 15 5"/>
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Width" Value="170"/>
-            <Setter Property="Height" Value="65"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="60"/>
             <Setter Property="Content" Value="Open"/>
+            <Setter Property="Block.Foreground" Value="White"/>
+            <Setter Property="Background" Value="#53354A"/>
+            <Setter Property="BorderBrush" Value="#E84545"/>
+            <Setter Property="BorderThickness" Value="2"/>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="Margin" Value="15"/>
+            <Setter Property="Block.Foreground" Value="White"/>
+            <Setter Property="Background" Value="#53354A"/>
+            <Setter Property="BorderBrush" Value="#E84545"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Width" Value="570"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="Control.Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="#E84545" Offset="0" />
+                            <GradientStop Color="#2B2E4A" Offset="0.5" />
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
         </Style>
     </Window.Resources>
     <Window.DataContext>
@@ -41,13 +80,13 @@
             </RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <TextBox Width="570" Height="40" Text="{Binding Path, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Text="{Binding Path, UpdateSourceTrigger=PropertyChanged}"/>
             <Button Command="{Binding GetInfoCommand}" />
         </StackPanel>
         <DockPanel Grid.Row="1" LastChildFill="True">
-            <TextBlock DockPanel.Dock="Top" Text="{Binding AsmInfo.Name, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock FontSize="18" DockPanel.Dock="Top" Text="{Binding AsmInfo.Name, UpdateSourceTrigger=PropertyChanged}"/>
             <ScrollViewer>
-                <TreeView ItemsSource="{Binding AsmInfo.Namespaces}" Visibility="Visible">
+                <TreeView ItemsSource="{Binding AsmInfo.Namespaces}">
                     <TreeView.ItemTemplate>
                         <HierarchicalDataTemplate ItemsSource="{Binding Path=Types}">
                             <TextBlock Text="{Binding Name}"/>

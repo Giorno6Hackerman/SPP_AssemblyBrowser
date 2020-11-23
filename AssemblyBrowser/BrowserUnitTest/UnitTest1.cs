@@ -29,6 +29,11 @@ namespace BrowserUnitTest
         
         }
 
+        public class Class3
+        {
+            public int DoSmt() { return 0; }
+        }
+
         private void Setup()
         {
             var info = new AssemblyBrowserLib.TypeInfo(typeof(Class2));
@@ -74,6 +79,14 @@ namespace BrowserUnitTest
         {
             var info = new AssemblyBrowserLib.TypeInfo(typeof(Class1));
             Assert.AreEqual("Field System.Int32 one", info.Members[1].Info);
+        }
+
+        [TestMethod]
+        public void TestMethodInClass()
+        {
+            var info = new AssemblyBrowserLib.TypeInfo(typeof(Class3));
+            var methodInfo = new TypeMemberInfo(typeof(Class3).GetMember("DoSmt")[0]); 
+            Assert.AreEqual(info.Members[0].Info, methodInfo.Info);
         }
     }
 }
