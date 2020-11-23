@@ -1,9 +1,8 @@
-﻿using Prism.Mvvm;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace AssemblyBrowserLib
 {
-    public class TypeMemberInfo //: BindableBase
+    public class TypeMemberInfo 
     {
         private MemberInfo _memberInfo { get; }
 
@@ -38,6 +37,17 @@ namespace AssemblyBrowserLib
             return $"Property {info.PropertyType} {info.Name}";
         }
 
+        private string GetMemberInfo(ConstructorInfo info)
+        {
+            string result = $"Constructor {info.Name}(";
+            foreach (var param in info.GetParameters())
+            {
+                result += $"{param.ParameterType} {param.Name}, ";
+            }
+            if (info.GetParameters().Length > 0)
+                result = result.Remove(result.Length - 2);
+            return result + ")";
+        }
 
         private string GetInfo(MemberInfo info)
         {
@@ -52,6 +62,10 @@ namespace AssemblyBrowserLib
             if (info.MemberType == MemberTypes.Field)
             {
                 return GetMemberInfo(info as FieldInfo);
+            }
+            if (info.MemberType == MemberTypes.Constructor)
+            {
+                return GetMemberInfo(info as ConstructorInfo);
             }
             return null;
         }

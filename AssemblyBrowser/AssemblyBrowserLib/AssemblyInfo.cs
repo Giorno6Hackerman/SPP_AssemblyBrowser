@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Linq;
 using System.Collections.ObjectModel;
-using Prism.Mvvm;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace AssemblyBrowserLib
 {
-    public class AssemblyInfo : /*BindableBase*/INotifyPropertyChanged
+    public class AssemblyInfo : INotifyPropertyChanged
     {
+        public AssemblyInfo(string path)
+        {
+            _path = path;
+            Name = AssemblyName.GetAssemblyName(_path).ToString();
+            _namespaces = GetInfo();
+        }
+
         private string _name;
         public string Name 
         {
@@ -25,17 +31,11 @@ namespace AssemblyBrowserLib
                 OnPropertyChanged("Name");
             }
         }
+
         private string _path;
         private Assembly _asm;
         public ObservableCollection<NamespaceInfo> Namespaces { get { return _namespaces; } }
-        private ObservableCollection<NamespaceInfo> _namespaces;
-
-        public AssemblyInfo(string path)
-        {
-            _path = path;
-            Name = AssemblyName.GetAssemblyName(_path).ToString();
-            _namespaces = GetInfo();
-        }
+        private ObservableCollection<NamespaceInfo> _namespaces;       
 
         private ObservableCollection<NamespaceInfo> GetInfo()
         {
